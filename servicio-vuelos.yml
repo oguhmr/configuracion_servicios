@@ -1,0 +1,25 @@
+#Nombre del servicio que va a utilizar cuando se registre en eureka
+spring:
+#Datos de acceso a la base de datos
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://db4free.net:3306/agenda3?serverTimezone=UTC
+    username: oguhmr001
+    password: T3mp0r4l
+
+#Propiedades para que hibernete cree adeucuadamente las instucciones SQL
+  jpa:
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        
+#Configuracione del microservicio_hoteles
+server:
+  port: 9000 
+
+#Datos de conexion a eureka
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8761/eureka
